@@ -45,7 +45,7 @@ ootd
 
 service_name은 아래 참조
 - db : ootd-db
-- frontend : ootd-fe
+- frontend : ootd-fe (빌드를 위해 1회성으로 실행되는 서비스임. 그래서 재시작 및 종료를 할 일이 없을 듯)
 - backend(api) : ootd-be
 - proxy : ootd-proxy
 
