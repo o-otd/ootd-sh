@@ -33,8 +33,10 @@ ootd
     ```chmod +x ./*.sh```
 
 3. 제대로 실행되었는지 각 서비스 페이지로 확인
-front : http://localhost
-api(swagger) : http://localhost/api/swagger-ui
+
+    front : http://localhost
+    
+    api(swagger) : http://localhost/api/swagger-ui
 
 ## 서비스 재시작
 실행의 역순으로 아래의 명령어를 터미널에서 입력
