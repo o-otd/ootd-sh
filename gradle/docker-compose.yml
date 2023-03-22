@@ -1,0 +1,25 @@
+# Use root/example as user/password credentials
+version: '3.1'
+
+services:
+  gradle:
+    image: arm64v8/gradle:7.6.1-jdk17
+#    arm64v8에는 alpine이미지가 없음
+#    image: gradle:7.6.1-jdk17-alpine
+    container_name: ootd-be
+    restart: always
+    volumes:
+      - ./data:/home/gradle/.gradle
+      - ../../ootd-be:/home/gradle/project
+    working_dir: /home/gradle/project
+    entrypoint: gradle :api:bootRun
+    user: gradle
+    ports:
+      - 60002:8080
+    networks:
+      - default
+      - ootd_net
+
+networks:
+  ootd_net:
+    external: true

@@ -1,0 +1,16 @@
+# Use root/example as user/password credentials
+version: '3.1'
+
+services:
+  node:
+    image: node:18-alpine
+    container_name: ootd-fe
+#    restart: always
+    volumes:
+      - ./data/npm:/home/node/.npm
+      - ./data/build:/home/node/build
+      - ../../ootd-fe:/home/node/app
+    working_dir: /home/node/app
+#    --output-path가 안먹는 관계로.. build script 추가
+    entrypoint: ["/bin/sh", "-c", "npm install && npm run build && cp -rf build /home/node/"]
+    user: node
