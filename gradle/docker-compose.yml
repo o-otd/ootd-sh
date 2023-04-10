@@ -4,7 +4,6 @@ version: '3.1'
 services:
   gradle:
     image: gradle:7.6.1-jdk17
-#    arm64v8에는 alpine이미지가 없음
 #    image: gradle:7.6.1-jdk17-alpine
     container_name: ootd-be
 #    restart: always
