@@ -12,6 +12,7 @@ services:
       - ./conf/conf.d:/etc/nginx/conf.d
       - ./data/log:/var/log/nginx
       - ../node/data/build:/usr/share/nginx/html
+      - ~/DATA:/DATA
     networks:
       - ootd_net
     ports:

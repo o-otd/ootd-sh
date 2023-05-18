@@ -10,7 +10,7 @@ services:
     volumes:
       - ./data:/home/gradle/.gradle
       - ../../ootd-be:/home/gradle/project
-      - ./data/DATA:/home/gradle/DATA
+      - ~/DATA:/home/gradle/DATA
     working_dir: /home/gradle/project
 #    entrypoint: ["/bin/sh", "-c", "gradle :api:build -x test && gradle :api:bootRun --args='--spring.profiles.active=docker'"]
     entrypoint: gradle :api:bootRun --args='--spring.profiles.active=docker'
